@@ -1,0 +1,20 @@
+# Paso 1: Solicitar al usuario ingresar números separados por espacios
+entrada = input("Ingrese una serie de números separados por espacios: ")
+
+# Paso 2: Dividir la cadena en una lista de cadenas de números
+numeros_str = entrada.split()
+
+# Paso 3: Convertir cadenas en números enteros y almacenarlos en una lista
+numeros = [int(numero) for numero in numeros_str]
+
+# Paso 4: Implementar el algoritmo de ordenamiento de selección
+n = len(numeros)
+for i in range(n - 1):
+    min_index = i
+    for j in range(i + 1, n):
+        if numeros[j] < numeros[min_index]:
+            min_index = j
+    numeros[i], numeros[min_index] = numeros[min_index], numeros[i]
+
+# Paso 5: Imprimir la lista ordenada
+print("Lista ordenada en orden ascendente:", numeros)
